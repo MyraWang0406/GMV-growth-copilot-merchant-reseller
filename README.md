@@ -432,6 +432,31 @@ cps-growth-copilot/
 pytest tests/test_guardrails.py -v
 ```
 
+## 运行（快速参考）
+
+仓库提供了简单的启动脚本，用于在 Codespaces 或本地开发环境运行后端（FastAPI）和前端（Next.js）。
+
+从仓库根运行：
+
+```bash
+./scripts/start-backend.sh
+./scripts/start-frontend.sh
+# 或同时启动并查看日志：
+./scripts/start-all.sh
+```
+
+验证服务：
+
+```bash
+curl http://127.0.0.1:8000/health
+curl 'http://127.0.0.1:8000/merchant/dashboard?merchant_id=1&lookback_days=7'
+curl 'http://127.0.0.1:3010/'
+curl 'http://127.0.0.1:3010/api_proxy/merchant/dashboard?merchant_id=1&lookback_days=7'
+```
+
+更多详细运行说明见 `RUNNING.md`。
+
+
 ## 文档
 
 详细文档请查看 `docs/` 目录：
