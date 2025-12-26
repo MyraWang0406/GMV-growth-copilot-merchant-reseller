@@ -1,0 +1,8 @@
+:root{ --primary:#0b66b2; --bg:#ffffff; --muted: rgba(11,102,178,0.08) }
+html,body { padding:0; margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: var(--bg); color:#111 }
+a { color: var(--primary) }
+
+/* watermark */
+.watermark{ position:fixed; right:12px; bottom:12px; background:transparent; color:rgba(0,0,0,0.22); font-size:12px; pointer-events:none; z-index:9999 }
+.watermark .box{ background:rgba(11,102,178,0.06); padding:6px 8px; border-radius:6px; backdrop-filter: blur(2px) }
+
