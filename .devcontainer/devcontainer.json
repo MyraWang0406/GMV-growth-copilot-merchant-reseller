@@ -1,0 +1,14 @@
+{
+  "name": "gmv-fullstack",
+  "forwardPorts": [3010, 8000],
+  "portsAttributes": {
+    "3010": { "label": "gmv-frontend", "onAutoForward": "openBrowser" },
+    "8000": { "label": "gmv-backend", "onAutoForward": "notify" }
+  },
+
+  // 第一次创建容器时做依赖安装（只做一次）
+  "postCreateCommand": "bash -lc 'cd app/frontend && (npm ci || npm install)'",
+
+  // 每次启动容器都自动拉起服务（关键）
+  "postStartCommand": "bash -lc 'chmod +x scripts/dev.sh && nohup ./scripts/dev.sh > devcontainer-start.log 2>&1 &'"
+}
