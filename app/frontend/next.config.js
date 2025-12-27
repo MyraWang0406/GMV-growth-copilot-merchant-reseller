@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
-/** @type {import('next').NextConfig} */
-module.exports = {
-	async rewrites() {
-		return [
-			{ source: '/api_proxy/:path*', destination: '/api/api_proxy/:path*' }
-		]
-	}
-}
+const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "http://127.0.0.1:8000/:path*",
+      },
+    ];
+  },
+};
+
+module.exports = nextConfig;
